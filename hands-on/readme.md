@@ -202,13 +202,13 @@ namespace DevDaysSpeakers.ViewModel
 		void OnPropertyChanged([CallerMemberName] string name = null) =>
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
-		bool busy;
+		bool isBusy;
 		public bool IsBusy
 		{ 
-			get { return busy; }
+			get { return isBusy; }
 			set 
 			{
-				busy = value;
+				isBusy = value;
 				OnPropertyChanged();
 			}
 		}
@@ -395,7 +395,7 @@ GetSpeakersCommand = new Command(
 ```csharp
 set
 {
-    busy = value;
+    isBusy = value;
     OnPropertyChanged();
     // CanExecute （このコマンドが実行可能かどうか）を更新
     GetSpeakersCommand.ChangeCanExecute();
@@ -429,13 +429,13 @@ namespace DevDaysSpeakers.ViewModel
 		void OnPropertyChanged([CallerMemberName] string name = null) =>
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
-		bool busy;
+		bool isBusy;
 		public bool IsBusy
 		{ 
-			get { return busy; }
+			get { return isBusy; }
 			set
 			{
-				busy = value;
+				isBusy = value;
 				OnPropertyChanged();
 				// CanExecute （このコマンドが実行可能かどうか）を更新
 				GetSpeakersCommand.ChangeCanExecute();
